@@ -10,17 +10,25 @@ async function getAPI(location) {
     const data = await api.json();
     return data
 }
-async function getData() {
-    const data = await mic;
+async function getData(infos) {
+    const data = await infos;
     const name = data.name
     const { temp, humidity, temp_max, temp_min } = data.main
-    const { main, description } = data.weather[0]
+    const { main} = data.weather[0]
     console.log(data)
-    console.log(name,temp, humidity, temp_max, temp_min, main, description)
+    console.log(name,temp, humidity, temp_max, temp_min, main)
 }
 
 const search = document.querySelector('#search')
-const test = prompt()
-const mic = getAPI(test)
+search.addEventListener('submit', e => {
+    e.preventDefault()
+    const location = document.querySelector('#location').value
+    console.log(location)
+    const infos = getAPI(location)
+    getData(infos)
 
-getData()
+})
+// // const test = prompt()
+// const infos = getAPI(test)
+
+// getData()
