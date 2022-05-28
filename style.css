@@ -1,0 +1,24 @@
+/* * {
+    border: 1px solid red;
+} */
+body {
+    text-align: center;
+    background-color: #2B4970;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 20px;
+    font-size: 1rem;
+    padding: 20px;
+    grid-gap: 2rem;
+    border-radius: 15px;
+}
+.card {
+    color: black;
+    border: 1px solid;
+    padding-bottom: 50px;
+    border-radius: inherit;
+    background-color: #4C688B;
+}
